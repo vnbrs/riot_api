@@ -1,11 +1,10 @@
-
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "riot_api/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "riot_api"
-  spec.version       = RiotApi::VERSION
+  spec.version       = RiotAPI::VERSION
   spec.authors       = ["Vinicius Brasil"]
   spec.email         = ["vnbrs@icloud.com"]
 

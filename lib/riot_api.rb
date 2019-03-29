@@ -1,6 +1,6 @@
 require "riot_api/version"
 
-module RiotApi
+module RiotAPI
   class Error < StandardError; end
   # Your code goes here...
 end
