@@ -1,8 +1,10 @@
-# RiotApi
+# RiotAPI
+===========
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/riot_api`. To experiment with that code, run `bin/console` for an interactive prompt.
+The RiotAPI gem allows Ruby developers to programatically access the Riot Games API with a cool DSL. P.S.: Blitzcrank approves!
 
-TODO: Delete this and the text above, and describe your gem
+![Blitzcrank approves!](https://vignette.wikia.nocookie.net/p__/images/4/41/Blitzcrank_Render_old_%281%29.png/revision/latest?cb=20170128010045&path-prefix=protagonist)
+
 
 ## Installation
 
@@ -22,7 +24,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+TODO!
+```
 
 ## Development
 
@@ -32,4 +36,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/riot_api.
+Bug reports and pull requests are welcome on GitHub at https://github.com/vnbrs/riot_api.
