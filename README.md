@@ -25,7 +25,12 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-TODO!
+# Do this once in your application startup
+RiotAPI.configure "your api key"
+
+# And use it =)
+RiotAPI::Summoner.find(name: "Mid or Feed", region: :na)
+# => #<RiotAPI::Summoner:0x00007fffd0a3b9c0 @id="pLIQUh9AUMSSwLMKdlNscoDEkoIYs2fYGAytTIKHkwy5YWg", @account_id=nil, @profile_icon_id=nil, @puuid="7qiWDJqhrCjc2xLDvfEsm2UiZOvo6l7UjBjUuRq7cwtWXRgSh8fGR59YC1Ls3mBZao6nDW_JiQ05gw", @summoner_level=nil, @revision_date=nil>
 ```
 
 ## Development
