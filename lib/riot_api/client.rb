@@ -44,7 +44,7 @@ module RiotAPI
       if base_url.nil?
         raise RiotAPI::InvalidRequestError, "The informed region is not supported. Select one of the following: #{BASE_URLS.keys}"
       end
-      url = "#{base_url}#{path}"
+      url = URI.escape("#{base_url}#{path}")
 
       uri = URI.parse(url)
       unless uri.is_a?(URI::HTTPS)
