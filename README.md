@@ -1,5 +1,4 @@
 # RiotAPI
-===========
 
 The RiotAPI gem allows Ruby developers to programatically access the Riot Games API with a cool DSL. P.S.: Blitzcrank approves!
 
@@ -10,8 +9,8 @@ The RiotAPI gem allows Ruby developers to programatically access the Riot Games 
 
 Add this line to your application's Gemfile:
 
-```ruby
-gem 'riot_api'
+```ruby 
+gem 'riotgames_api'
 ```
 
 And then execute:
@@ -20,12 +19,17 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install riot_api
+    $ gem install riotgames_api
 
 ## Usage
 
 ```ruby
-TODO!
+# Do this once in your application startup
+RiotAPI.configure "your api key"
+
+# And use it =)
+RiotAPI::Summoner.find(name: "Mid or Feed", region: :na)
+# => #<RiotAPI::Summoner:0x00007fffd0a3b9c0 @id="pLIQUh9AUMSSwLMKdlNscoDEkoIYs2fYGAytTIKHkwy5YWg", @account_id=nil, @profile_icon_id=nil, @puuid="7qiWDJqhrCjc2xLDvfEsm2UiZOvo6l7UjBjUuRq7cwtWXRgSh8fGR59YC1Ls3mBZao6nDW_JiQ05gw", @summoner_level=nil, @revision_date=nil>
 ```
 
 ## Development
