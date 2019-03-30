@@ -9,8 +9,8 @@ The RiotAPI gem allows Ruby developers to programatically access the Riot Games 
 
 Add this line to your application's Gemfile:
 
-```ruby
-gem 'riot_api'
+```ruby 
+gem 'riotgames_api'
 ```
 
 And then execute:
