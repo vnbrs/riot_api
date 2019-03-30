@@ -1,5 +1,6 @@
 module RiotAPI
   class InvalidRequestError < StandardError; end
+  class ClientNotConfiguredError < StandardError; end
 
   class ResponseError < StandardError
     attr_accessor :response
