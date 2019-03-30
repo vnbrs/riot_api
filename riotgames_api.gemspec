@@ -3,7 +3,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "riot_api/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "riot_api"
+  spec.name          = "riotgames_api"
   spec.version       = RiotAPI::VERSION
   spec.authors       = ["Vinicius Brasil"]
   spec.email         = ["vnbrs@icloud.com"]

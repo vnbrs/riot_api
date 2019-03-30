@@ -1,8 +1,7 @@
-# RiotAPI
+# riotgames_api
+The RiotAPI gem allows Ruby developers to programatically access the Riot Games API with a cool DSL.
 
-The RiotAPI gem allows Ruby developers to programatically access the Riot Games API with a cool DSL. P.S.: Blitzcrank approves!
-
-![Blitzcrank approves!](https://vignette.wikia.nocookie.net/p__/images/4/41/Blitzcrank_Render_old_%281%29.png/revision/latest?cb=20170128010045&path-prefix=protagonist)
+![Blitzcrank approves!](https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/40b52aba-ebad-4342-96c5-d8c23437ad5b/d5xuhop-d5f510a7-391e-4a7e-9307-c8cab2e7d72e.png/v1/fill/w_1024,h_485,q_80,strp/iblitz_crank_by_figgycus_d5xuhop-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NDg1IiwicGF0aCI6IlwvZlwvNDBiNTJhYmEtZWJhZC00MzQyLTk2YzUtZDhjMjM0MzdhZDViXC9kNXh1aG9wLWQ1ZjUxMGE3LTM5MWUtNGE3ZS05MzA3LWM4Y2FiMmU3ZDcyZS5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.6d3xFdnUaZljN0mKWR9AQk2W8QLOKp2VCNdm_Nc1MV4)
 
 
 ## Installation
