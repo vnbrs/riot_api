@@ -1,5 +1,4 @@
 # RiotAPI
-===========
 
 The RiotAPI gem allows Ruby developers to programatically access the Riot Games API with a cool DSL. P.S.: Blitzcrank approves!
 
