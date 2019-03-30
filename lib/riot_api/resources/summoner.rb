@@ -37,5 +37,6 @@ module RiotAPI
         s.summoner_level = json["summoner_level"]
         s.revision_date = json["revision_date"]
       end
+    end
   end
 end
