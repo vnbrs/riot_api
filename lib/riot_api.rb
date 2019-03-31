@@ -7,15 +7,18 @@ module RiotAPI
   class << self
     def configure(api_key)
       @client = Client.new(api_key)
-      return nil
     end
 
     def client
-      if @client
-        @client
-      else
+      if @client.nil?
         raise ClientNotConfiguredError, "You must call RiotAPI.configure with your API key before calling the API"
+      else
+        @client
       end
+    end
+
+    def reset!
+      @client = nil
     end
   end
 end
