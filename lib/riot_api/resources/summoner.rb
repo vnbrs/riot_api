@@ -1,7 +1,35 @@
 module RiotAPI
   class Summoner
-    attr_accessor :id, :account_id, :profile_icon_id, :puuid, :summoner_level, :revision_date
+    # Encrypted summoner ID. Max length 63 characters.
+    attr_accessor :id
 
+    # Encrypted account ID. Max length 56 characters.
+    attr_accessor :account_id
+
+    # ID of the summoner icon associated with the summoner.
+    attr_accessor :profile_icon_id
+
+    # Encrypted PUUID. Exact length of 78 characters.
+    attr_accessor :puuid
+
+    # Summoner name.
+    attr_accessor :name
+
+    # Summoner level associated with the summoner.
+    attr_accessor :summoner_level
+
+    # Date summoner was last modified specified as epoch milliseconds. The following events will update this timestamp: profile icon change, playing the tutorial or advanced tutorial, finishing a game, summoner name change
+    attr_accessor :revision_date
+
+    # Finds a summoner using the Riot Games API.
+    # @example Find a summoner by name
+    #   RiotAPI::Summoner.find(region: :br, name: "Your Name")
+    # @param [Hash] options The options and filters to find the summoner
+    # @option options [String] :region The League of Legends region associated with the account (e.g. +:br+, +:na+, etc)
+    # @option options [String] :name The summoner name
+    # @option options [String] :id The encrypted summoner ID
+    # @option options [String] :account_id The encrypted account ID
+    # @option options [String] :puuid The encrypted PUUID
     def self.find(options = {})
       mandatory_options = [:region]
       accepted_filters = [:name, :id, :account_id, :puuid]
@@ -34,6 +62,7 @@ module RiotAPI
         s.account_id = json["account_id"]
         s.profile_icon_id = json["profile_icon_id"]
         s.puuid = json["puuid"]
+        s.name = json["name"]
         s.summoner_level = json["summoner_level"]
         s.revision_date = json["revision_date"]
       end

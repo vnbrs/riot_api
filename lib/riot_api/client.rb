@@ -3,6 +3,8 @@ require 'uri'
 require 'json'
 
 module RiotAPI
+  # The +RiotAPI::Client+ class is resposible to handle HTTP requests between the library and the
+  # Riot Games API.
   class Client
     attr_reader :api_key
 
@@ -35,6 +37,14 @@ module RiotAPI
       @api_key = api_key
     end
 
+    # Makes an HTTP request to the Riot Games API, based on the selected +region+. If the response
+    # status is different than HTTP 200, it will raise a +RiotAPI::ResponseError+ exception.
+    #
+    # @param [Symbol] method The HTTP method to use, e.g.: +:get+, +:post+, etc.
+    # @param [String] path The request path, e.g.: +/matches/1+
+    # @param [Symbol] region The League of Legends region to request. The supported list of regions are listed on +RiotAPI::Client::BASE_URLS+.
+    # @param [Hash] params The request parameters, e.g.: +{ name: "Example" }+
+    # @return [Hash] The request response
     def request(method, path, region, params = {})
       unless BASE_URLS.key?(region)
         raise RiotAPI::InvalidRequestError, "The informed region is not supported. Select one of the following: #{BASE_URLS.keys}"
