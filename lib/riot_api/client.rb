@@ -4,7 +4,7 @@ require 'json'
 
 module RiotAPI
   class Client
-    attr_accessor :api_key
+    attr_reader :api_key
 
     BASE_URLS = {
       # Regional endpoints
@@ -32,30 +32,21 @@ module RiotAPI
         raise ArgumentError, "The API key must be informed"
       end
 
-      self.api_key = api_key
+      @api_key = api_key
     end
 
     def request(method, path, region, params = {})
-      if api_key.nil? || api_key.empty?
-        raise RiotAPI::InvalidRequestError, "The API key must be informed"
-      end
-
-      base_url = BASE_URLS[region]
-      if base_url.nil?
+      unless BASE_URLS.key?(region)
         raise RiotAPI::InvalidRequestError, "The informed region is not supported. Select one of the following: #{BASE_URLS.keys}"
       end
-      url = URI.escape("#{base_url}#{path}")
 
-      uri = URI.parse(url)
-      unless uri.is_a?(URI::HTTPS)
-        raise RiotAPI::InvalidRequestError, "The request URL must be HTTPS"
-      end
+      url = URI.escape("#{BASE_URLS[region]}#{path}")
 
-      params.merge!({ api_key: api_key })
+      params.merge!({ api_key: @api_key })
 
       case method
       when :get
-        request_get(uri, params)
+        request_get(URI(url), params)
       else
         raise RiotAPI::InvalidRequestError, "The method #{method} is not allowed"
       end
