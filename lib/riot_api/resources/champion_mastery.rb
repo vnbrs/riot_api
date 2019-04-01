@@ -71,7 +71,7 @@ module RiotAPI
     # @param [Hash] options The options and filters to find the mastery points sum
     # @option options [String] :region The League of Legends region associated with the account (e.g. +:br+, +:na+, etc)
     # @option options [String] :summoner_id The encrypted summoner ID
-    # @return [Integer] A list of mastery info for each champion
+    # @return [Integer] The player's total champion mastery score
     def self.score_sum(options = {})
       mandatory_options = [:region, :summoner_id]
       unless (mandatory_options - options.keys).empty?

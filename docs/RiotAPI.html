@@ -79,7 +79,7 @@
   <dl>
     <dt>Defined in:</dt>
     <dd>lib/riot_api.rb<span class="defines">,<br />
-  lib/riot_api/client.rb,<br /> lib/riot_api/errors.rb,<br /> lib/riot_api/version.rb,<br /> lib/riot_api/resources/summoner.rb</span>
+  lib/riot_api/client.rb,<br /> lib/riot_api/errors.rb,<br /> lib/riot_api/version.rb,<br /> lib/riot_api/resources/summoner.rb,<br /> lib/riot_api/resources/champion_mastery.rb</span>
 </dd>
   </dl>
   
@@ -91,7 +91,7 @@
     
   
     
-      <strong class="classes">Classes:</strong> <span class='object_link'><a href="RiotAPI/Client.html" title="RiotAPI::Client (class)">Client</a></span>, <span class='object_link'><a href="RiotAPI/ClientNotConfiguredError.html" title="RiotAPI::ClientNotConfiguredError (class)">ClientNotConfiguredError</a></span>, <span class='object_link'><a href="RiotAPI/InvalidRequestError.html" title="RiotAPI::InvalidRequestError (class)">InvalidRequestError</a></span>, <span class='object_link'><a href="RiotAPI/ResponseError.html" title="RiotAPI::ResponseError (class)">ResponseError</a></span>, <span class='object_link'><a href="RiotAPI/Summoner.html" title="RiotAPI::Summoner (class)">Summoner</a></span>
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="RiotAPI/ChampionMastery.html" title="RiotAPI::ChampionMastery (class)">ChampionMastery</a></span>, <span class='object_link'><a href="RiotAPI/Client.html" title="RiotAPI::Client (class)">Client</a></span>, <span class='object_link'><a href="RiotAPI/ClientNotConfiguredError.html" title="RiotAPI::ClientNotConfiguredError (class)">ClientNotConfiguredError</a></span>, <span class='object_link'><a href="RiotAPI/InvalidRequestError.html" title="RiotAPI::InvalidRequestError (class)">InvalidRequestError</a></span>, <span class='object_link'><a href="RiotAPI/ResponseError.html" title="RiotAPI::ResponseError (class)">ResponseError</a></span>, <span class='object_link'><a href="RiotAPI/Summoner.html" title="RiotAPI::Summoner (class)">Summoner</a></span>
     
   
 </p>
@@ -143,8 +143,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Gets the instance of <code>RiotAPI::Client</code>.</p>
+    <span class="summary_desc"><div class='inline'><p>Gets the instance of +RiotAPI::Client+.</p>
 </div></span>
   
 </li>
@@ -167,8 +166,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Sets up the initial configuration for the client to work.</p>
+    <span class="summary_desc"><div class='inline'><p>Sets up the initial configuration for the client to work.</p>
 </div></span>
   
 </li>
@@ -191,8 +189,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Resets any configuration set by <code>RiotAPI.configure</code>.</p>
+    <span class="summary_desc"><div class='inline'><p>Resets any configuration set by +RiotAPI.configure+.</p>
 </div></span>
   
 </li>
@@ -218,8 +215,8 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Gets the instance of <code>RiotAPI::Client</code>. If the client hasn&#39;t been configured yet, it throws a <code>RiotAPI::ClientNotConfiguredError</code>.</p>
+    <p>Gets the instance of +RiotAPI::Client+. If the client hasn&#39;t been configured yet, it throws a
++RiotAPI::ClientNotConfiguredError+.</p>
 
 
   </div>
@@ -237,8 +234,7 @@
       
       
         &mdash;
-        <div class='inline'>
-<p>The singleton instance of the client</p>
+        <div class='inline'><p>The singleton instance of the client</p>
 </div>
       
     </li>
@@ -251,16 +247,16 @@
       <pre class="lines">
 
 
-22
 23
 24
 25
 26
 27
-28</pre>
+28
+29</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/riot_api.rb', line 22</span>
+      <pre class="code"><span class="info file"># File 'lib/riot_api.rb', line 23</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_client'>client</span>
   <span class='kw'>if</span> <span class='ivar'>@client</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
@@ -285,8 +281,7 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Sets up the initial configuration for the client to work</p>
+    <p>Sets up the initial configuration for the client to work</p>
 
 
   </div>
@@ -305,8 +300,7 @@
       
       
         &mdash;
-        <div class='inline'>
-<p>The Riot Games API key</p>
+        <div class='inline'><p>The Riot Games API key</p>
 </div>
       
     </li>
@@ -320,12 +314,12 @@
       <pre class="lines">
 
 
-10
 11
-12</pre>
+12
+13</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/riot_api.rb', line 10</span>
+      <pre class="code"><span class="info file"># File 'lib/riot_api.rb', line 11</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_configure'>configure</span><span class='lparen'>(</span><span class='id identifier rubyid_api_key'>api_key</span><span class='rparen'>)</span>
   <span class='ivar'>@client</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="RiotAPI/Client.html" title="RiotAPI::Client (class)">Client</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="RiotAPI/Client.html#initialize-instance_method" title="RiotAPI::Client#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_api_key'>api_key</span><span class='rparen'>)</span>
@@ -346,8 +340,7 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Resets any configuration set by <code>RiotAPI.configure</code></p>
+    <p>Resets any configuration set by +RiotAPI.configure+</p>
 
 
   </div>
@@ -361,12 +354,12 @@
       <pre class="lines">
 
 
-15
 16
-17</pre>
+17
+18</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/riot_api.rb', line 15</span>
+      <pre class="code"><span class="info file"># File 'lib/riot_api.rb', line 16</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_reset!'>reset!</span>
   <span class='ivar'>@client</span> <span class='op'>=</span> <span class='kw'>nil</span>
@@ -381,7 +374,7 @@
 </div>
 
       <div id="footer">
-  Generated on Sun Mar 31 23:40:49 2019 by
+  Generated on Mon Apr  1 18:45:16 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.18 (ruby-2.6.2).
 </div>
