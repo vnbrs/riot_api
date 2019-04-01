@@ -21,6 +21,9 @@ module RiotAPI
     # Date summoner was last modified specified as epoch milliseconds. The following events will update this timestamp: profile icon change, playing the tutorial or advanced tutorial, finishing a game, summoner name change
     attr_accessor :revision_date
 
+    # The summoner associated region, e.g.: +:br+, +:na+
+    attr_accessor :region
+
     # Finds a summoner using the Riot Games API.
     # @example Find a summoner by name
     #   RiotAPI::Summoner.find(region: :br, name: "Your Name")
@@ -30,6 +33,7 @@ module RiotAPI
     # @option options [String] :id The encrypted summoner ID
     # @option options [String] :account_id The encrypted account ID
     # @option options [String] :puuid The encrypted PUUID
+    # @return [RiotAPI::Summoner] The summoner that was found
     def self.find(options = {})
       mandatory_options = [:region]
       accepted_filters = [:name, :id, :account_id, :puuid]
@@ -53,7 +57,9 @@ module RiotAPI
       )
 
       response = RiotAPI.client.request(:get, request_path, options[:region])
-      self.from_json(response)
+      instance = self.from_json(response)
+      instance.region = options[:region]
+      instance
     end
 
     def self.from_json(json)
@@ -66,6 +72,12 @@ module RiotAPI
         s.summoner_level = json["summoner_level"]
         s.revision_date = json["revision_date"]
       end
+    end
+
+    # Returns a list of champion mastery for each champion
+    # @return [Array<RiotAPI::ChampionMastery>]
+    def masteries
+      ChampionMastery.where(region: self.region, summoner_id: self.id)
     end
   end
 end

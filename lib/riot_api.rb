@@ -2,6 +2,7 @@ require "riot_api/version"
 require "riot_api/client"
 require "riot_api/errors"
 require "riot_api/resources/summoner"
+require "riot_api/resources/champion_mastery"
 
 module RiotAPI
   class << self
